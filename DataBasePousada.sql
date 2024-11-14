@@ -132,7 +132,7 @@ GROUP BY r.ID_Reserva
 HAVING COUNT(rq.ID_Quarto) > 1;
 
 
--- 7. Quartos que ainda não foram reservados.
+-- 6. Quartos que ainda não foram reservados.
 SELECT *
 FROM Quarto q
 WHERE q.ID_Quarto NOT IN (
@@ -140,7 +140,7 @@ WHERE q.ID_Quarto NOT IN (
     FROM Reserva_Quarto rq
 );
 
--- 8. Todas as reservas com os respectivos dados do pagamento, incluindo valor e data do pagamento.
+-- 7. Todas as reservas com os respectivos dados do pagamento, incluindo valor e data do pagamento.
 SELECT r.ID_Reserva, h.nome AS nome_hospede, p.Valor AS valor_pagamento, p.Data_Pagamento
 FROM Reserva r
 INNER JOIN Pagamento p ON r.ID_Reserva = p.ID_Reserva
