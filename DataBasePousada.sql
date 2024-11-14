@@ -1,3 +1,8 @@
+create database if not exists Pousada;
+
+use Pousada;
+
+
 create table hospede (
     id_hospede int primary key auto_increment,
     nome varchar(100) not null,
@@ -13,9 +18,6 @@ create table reserva (
     status varchar(50),
     constraint fk_hospede foreign key (id_hospede) references hospede(id_hospede)
 );
-create database if not exists Pousada;
-
-use Pousada;
 
 
 
@@ -65,13 +67,11 @@ INSERT INTO Reserva (ID_Hospede, Data_Inicio, Data_Fim, Status) VALUES
 (5, '2024-11-22', '2024-11-28', 'Confirmada');
 
 
-INSERT INTO Reserva_Quarto (ID_Reserva, ID_Quarto) VALUES 
-(1, 1),
-(1, 2),
-(2, 3),
-(3, 4),
-(4, 2),
-(5, 5);
+INSERT INTO Reserva_Quarto (ID_Reserva, ID_Quarto) VALUES  
+(1, 1), 
+(1, 2), 
+(2, 3);
+
 
 INSERT INTO Pagamento (ID_Reserva, Valor, Data_Pagamento) VALUES 
 (1, 750.00, '2024-11-14'),
