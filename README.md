@@ -241,8 +241,17 @@ Tabela de junção para a relação N:M entre `Reserva` e `Quarto`.
 
 # 7)
 
-Scripts em SQL DML para inserção de dados fictícios estão em DataBasePousada.sql
+## Scripts em SQL DML para inserção de dados fictícios estão em DataBasePousada.sql
+
 ---
+
+# 8)
+## Elaboração das principais consultas em SQL estão em DataBasePousada.sql
+
+---
+
+#FIM
+
 
 
 
