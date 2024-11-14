@@ -235,6 +235,16 @@ Tabela de junção para a relação N:M entre `Reserva` e `Quarto`.
 
 # 6)
 
+## Scripts em SQL DDL para criação do banco de dados e respectivas tabelas estão em DataBasePousada.sql
+
+---
+
+# 7)
+
+## Scripts em SQL DDL para criação do banco de dados e respectivas tabelas estão em DataBasePousada.sql
+
+---
+
 
 
 
