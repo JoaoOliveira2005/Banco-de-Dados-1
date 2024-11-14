@@ -76,12 +76,21 @@ Cada Reserva tem um único Pagamento (1:1), e cada Pagamento está associado a u
 
 
 Diagrama Entidade-Relacionamento para a Pousada:
+
+</p>
+<br>
+<img align='center' src='TABELA POUSADA.png'/>
+<br>
+<h3>🔹Parte 2 - Diagrama Entidade Relacionamento</h3>
+<p>
+
  
 Hóspede - Reserva: (um hóspede faz uma ou mais reservas, e cada reserva pertence a um hóspede). 
 (1 hóspede para várias reservas).
 
-Reserva - Quarto: Relacionamento Inclui (uma reserva pode incluir um ou mais quartos, e cada quarto pode ser incluído em várias reservas). No losango, escreva "Inclui" com cardinalidade N
-.
+Reserva - Quarto: Relacionamento Inclui (uma reserva pode incluir um ou mais quartos, e cada quarto pode ser incluído em várias reservas). No losango, escreva "Inclui" com cardinalidade N.
+
+
 Reserva - Pagamento: Relacionamento Possui (cada reserva possui um pagamento, e cada pagamento pertence a uma única reserva). No losango, escreva "Possui" e adicione a cardinalidade 1:1.
 
 ___________________________________________________________
