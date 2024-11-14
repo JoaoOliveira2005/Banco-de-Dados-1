@@ -82,6 +82,71 @@ INSERT INTO Pagamento (ID_Reserva, Valor, Data_Pagamento) VALUES
 
 
 
+--- principais consultas em SQL
+
+
+
+-- 1. Todas as reservas confirmadas, listando também o hóspede, a data de início e a data de fim da reserva.
+
+
+SELECT r.*, h.nome AS nome_hospede
+FROM Reserva r
+INNER JOIN Hospede h ON r.ID_Hospede = h.ID_Hospede
+WHERE r.Status = 'Confirmada';
+
+
+-- 2. Todas as reservas e os quartos associados, listando a data de início, data de fim, o tipo de quarto e o preço.
+
+
+SELECT r.ID_Reserva, r.Data_Inicio, r.Data_Fim, q.Tipo, q.Preco
+FROM Reserva r
+INNER JOIN Reserva_Quarto rq ON r.ID_Reserva = rq.ID_Reserva
+INNER JOIN Quarto q ON rq.ID_Quarto = q.ID_Quarto;
+
+
+
+-- 3. Todas as reservas canceladas ou pendentes, listando o hóspede e a data de início e fim da reserva.
+
+
+SELECT r.*, h.nome AS nome_hospede
+FROM Reserva r
+INNER JOIN Hospede h ON r.ID_Hospede = h.ID_Hospede
+WHERE r.Status IN ('Cancelada', 'Pendente');
+
+-- 4. Valor total de pagamento para cada reserva, listando também o hóspede e as datas da reserva.
+
+
+SELECT p.ID_Pagamento, h.nome AS nome_hospede, r.Data_Inicio, r.Data_Fim, p.Valor AS valor_pagamento
+FROM Pagamento p
+INNER JOIN Reserva r ON p.ID_Reserva = r.ID_Reserva
+INNER JOIN Hospede h ON r.ID_Hospede = h.ID_Hospede;
+
+-- 5. Listagem de todas as reservas com mais de um quarto reservado.
+
+
+SELECT r.ID_Reserva, h.nome AS nome_hospede, COUNT(rq.ID_Quarto) AS qtd_quartos
+FROM Reserva r
+INNER JOIN Reserva_Quarto rq ON r.ID_Reserva = rq.ID_Reserva
+INNER JOIN Hospede h ON r.ID_Hospede = h.ID_Hospede
+GROUP BY r.ID_Reserva
+HAVING COUNT(rq.ID_Quarto) > 1;
+
+
+-- 7. Quartos que ainda não foram reservados.
+SELECT *
+FROM Quarto q
+WHERE q.ID_Quarto NOT IN (
+    SELECT DISTINCT rq.ID_Quarto
+    FROM Reserva_Quarto rq
+);
+
+-- 8. Todas as reservas com os respectivos dados do pagamento, incluindo valor e data do pagamento.
+SELECT r.ID_Reserva, h.nome AS nome_hospede, p.Valor AS valor_pagamento, p.Data_Pagamento
+FROM Reserva r
+INNER JOIN Pagamento p ON r.ID_Reserva = p.ID_Reserva
+INNER JOIN Hospede h ON r.ID_Hospede = h.ID_Hospede;
+
+
 
 
 
