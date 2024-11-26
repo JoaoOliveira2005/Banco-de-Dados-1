@@ -78,7 +78,7 @@ A pousada oferece uma estadia tranquila e confortável, proporcionando uma exper
 
 </p>
 <br>
-<img align='center' src='TABELA POUSADA.PNG'/>
+<img align='center' src='Diagrama Conceitual.PNG'/>
 <br>
 <p>
 
