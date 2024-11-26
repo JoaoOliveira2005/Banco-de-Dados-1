@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro de Reserva</title>
+  </head>
+  <body>
+    <h1>Cadastro de Reserva</h1>
+    <form action="/reserva" method="POST">
+      <label for="id_hospede">ID do Hóspede:</label>
+      <input type="text" id="id_hospede" name="id_hospede" required />
+
+      <label for="data_inicio">Data de Início:</label>
+      <input type="date" id="data_inicio" name="data_inicio" required />
+
+      <label for="data_fim">Data de Fim:</label>
+      <input type="date" id="data_fim" name="data_fim" required />
+
+      <label for="status">Status:</label>
+      <input type="text" id="status" name="status" required />
+
+      <button type="submit">Cadastrar Reserva</button>
+    </form>
+
+    <br />
+    <a href="/">Voltar para o início</a>
+  </body>
+</html>
