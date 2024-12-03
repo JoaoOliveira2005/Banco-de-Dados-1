@@ -189,6 +189,8 @@ Tabela intermediária para o relacionamento N:M entre `Reserva` e `Quarto`.
 ---
 
 # 5) Normalização
+(a tabela nao foi completamente normalizada, devido ao motivo de eu ter criados os scripts do python com flask e o html, antes de ter feito a normalizacao e as tabelas, assim nao conseguinod deixar normalizado na forma padrao da 1FN de ser atomizado e indivisivel)
+
 
 Baseado na análise das três formas normais (1FN, 2FN e 3FN), o modelo de dados está normalizado.
 
