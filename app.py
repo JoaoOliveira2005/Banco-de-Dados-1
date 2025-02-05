@@ -106,5 +106,5 @@ def pagamento():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)  # Isso é o que você tem atualmente
+    app.run(debug=True)
 
