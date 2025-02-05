@@ -6,7 +6,7 @@ def get_db_connection():
     connection = mysql.connector.connect(
         host="localhost",
         user="root",
-        password="Joca1313!",  # Altere para sua senha
+        password="",  # senha
         database="pousada"     # Nome do banco de dados
     )
     return connection
@@ -78,7 +78,7 @@ def todas_as_informacoes_de_reserva():
     """
     return executar_consulta(query)
 
-# Consulta 2: Valor total de pagamento para cada reserva
+# Consulta 2 Valor total de pagamento para cada reserva
 def valor_total_por_reserva():
     query = """
     SELECT 
@@ -94,22 +94,22 @@ def valor_total_por_reserva():
     return executar_consulta(query)
 
 if __name__ == "__main__":
-    # Consulta 1: Reservas confirmadas
+    # Consulta 1 Reservas confirmadas
     reservas = reservas_confirmadas()
     if reservas:
         salvar_em_excel("reservas_confirmadas.xlsx", "Reservas Confirmadas", reservas)
 
-    # Consulta 2: Quartos não reservados
+    # Consulta 2 Quartos não reservados
     quartos = quartos_nao_reservados()
     if quartos:
         salvar_em_excel("quartos_nao_reservados.xlsx", "Quartos Não Reservados", quartos)
 
-    # Consulta 3: Todas as reservas com os respectivos dados do pagamento
+    # Consulta 3 Todas as reservas com os respectivos dados do pagamento
     informacoes_reserva = todas_as_informacoes_de_reserva()
     if informacoes_reserva:
         salvar_em_excel("todas_as_informacoes_de_reserva.xlsx", "Informações de Reserva", informacoes_reserva)
 
-    # Consulta 4: Valor total de pagamento para cada reserva
+    # Consulta 4 Valor total de pagamento para cada reserva
     valor_total = valor_total_por_reserva()
     if valor_total:
         salvar_em_excel("valor_total_por_reserva.xlsx", "Valor Total por Reserva", valor_total)
